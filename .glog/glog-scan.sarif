@@ -1,0 +1,228 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Glog.AI",
+          "organization": "Glog.AI",
+          "fullName": "Glog, Making software more secure",
+          "version": "1.0.0",
+          "semanticVersion": "1.0.0",
+          "informationUri": "https://www.glog.ai",
+          "rules": [
+            {
+              "id": "glog-7372debe-3f45-4e4e-b7f9-7d4fb9312733",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe `Shell=True` subprocess call security vulnerability in Python occurs when the shell is invoked in a subprocess call with user-supplied input. This can lead to shell injection attacks where an attacker can execute arbitrary commands on the system.\n\nIn the provided code snippet, the `subprocess.call()` function is used to execute a command that includes user-supplied input (`full_recording_path`, `args.sample_rate`). This can potentially lead to a shell injection attack if an attacker is able to control the values of these variables.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, avoid using `shell=True` in `subprocess.call()` whenever possible, especially when the command string involves user-supplied input. Instead, use the list of arguments version of `subprocess.call()`, which does not use the shell and is not vulnerable to shell injection.\n\n## Source Code Fix Recommendation\n\nHere is a fixed version of the provided code snippet:\n\n```python\nimport shlex\nimport subprocess\n\n# Ensure that user-supplied input is properly escaped\nfull_recording_path = shlex.quote(full_recording_path)\nsample_rate = shlex.quote(str(args.sample_rate))\n\n# Use list of arguments version of subprocess.call()\nsubprocess.call([\"sox\", full_recording_path, \"-r\", sample_rate, \"-b\", \"16\", \"-c\", \"1\"])\n```\n\n## Library Dependencies\n\nThe code example requires the following Python libraries:\n\n- `subprocess`\n- `shlex`\n\n## OWASP Resources\n\n- [OWASP Python Security - Shell Injection](https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html)\n\n## Common Weakness Enumeration (CWE)\n\n- [CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')](https://cwe.mitre.org/data/definitions/78.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B602"
+                ]
+              }
+            },
+            {
+              "id": "glog-02c7fbd0-9361-4c1a-af41-1ff72e84f619",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nUntrusted Data Deserialization Vulnerability in Pickle Modules is a critical security vulnerability in Python programming language. The vulnerability occurs when an application deserializes data from an untrusted source without proper validation. This can lead to arbitrary code execution, denial of service, or other malicious activities.\n\nIn Python, the `pickle` module is used for serializing and deserializing Python object structures. However, `pickle` is not safe to use for processing untrusted data. If you deserialize data that was serialized by an attacker, the attacker can execute arbitrary code.\n\nIn the provided code example, the `Unpickler(f).load()` function is used to deserialize data from a file. If the file contains malicious data, this can lead to a security vulnerability.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, you should avoid deserializing data from untrusted sources. If you need to deserialize data, use a safe serialization format such as JSON.\n\nIf you must use `pickle`, ensure that the data is from a trusted source and that it has not been tampered with. You can do this by using digital signatures or by encrypting the data.\n\n## Source Code Fix Recommendation\n\nReplace the `pickle` module with the `json` module for deserializing data. Here is a fixed version of the provided code example:\n\n```python\nimport json\n\nwith open('file.json', 'r') as f:\n    self.trainExamplesHistory = json.load(f)\n```\n\n## Library Dependencies\n\nThe provided code example requires the `pickle` module, which is included in the Python standard library.\n\nThe fixed code example requires the `json` module, which is also included in the Python standard library.\n\n## OWASP Resources\n\n- [OWASP Top 10 2017: A8-Insecure Deserialization](https://owasp.org/www-project-top-ten/2017/A8_2017-Insecure_Deserialization)\n- [OWASP Python Security: Deserialization](https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html)\n\n## Common Weakness Enumeration (CWE)\n\n- [CWE-502: Deserialization of Untrusted Data](https://cwe.mitre.org/data/definitions/502.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B301"
+                ]
+              }
+            },
+            {
+              "id": "glog-65ce8190-f11a-4229-82df-2591b5c2f3e5",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nUntrusted Data Deserialization Vulnerability in Pickle Modules is a critical security vulnerability in Python programming language. The vulnerability occurs when an application deserializes data from an untrusted source without proper validation. This can lead to arbitrary code execution, denial of service, or other malicious activities.\n\nIn Python, the `pickle` module is used for serializing and deserializing Python object structures. However, `pickle` is not safe to use for processing untrusted data. If you deserialize data that was serialized by an attacker, the attacker can execute arbitrary code.\n\nIn the provided code example, the `Unpickler(f).load()` function is used to deserialize data from a file. If the file contains malicious data, this can lead to a security vulnerability.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, you should avoid deserializing data from untrusted sources. If you need to deserialize data, use a safe serialization format such as JSON.\n\nIf you must use `pickle`, ensure that the data is from a trusted source and that it has not been tampered with. You can do this by using digital signatures or by encrypting the data.\n\n## Source Code Fix Recommendation\n\nReplace the `pickle` module with the `json` module for deserializing data. Here is a fixed version of the provided code example:\n\n```python\nimport json\n\nwith open('file.json', 'r') as f:\n    self.trainExamplesHistory = json.load(f)\n```\n\n## Library Dependencies\n\nThe provided code example requires the `pickle` module, which is included in the Python standard library.\n\nThe fixed code example requires the `json` module, which is also included in the Python standard library.\n\n## OWASP Resources\n\n- [OWASP Top 10 2017: A8-Insecure Deserialization](https://owasp.org/www-project-top-ten/2017/A8_2017-Insecure_Deserialization)\n- [OWASP Python Security: Deserialization](https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html)\n\n## Common Weakness Enumeration (CWE)\n\n- [CWE-502: Deserialization of Untrusted Data](https://cwe.mitre.org/data/definitions/502.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B301"
+                ]
+              }
+            },
+            {
+              "id": "glog-3aa1ef5e-1662-488e-9d03-233a2966dd11",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe \"Unvalidated tarfile.extractall usage vulnerability\" in Python refers to a security issue where an attacker can create a tar file containing a series of files that, when extracted, can overwrite arbitrary files on the filesystem. This is due to the fact that the `tarfile.extractall()` method in Python's `tarfile` module does not validate or sanitize the paths of the files within the tar archive. If the tar archive contains relative or absolute file paths, these files will be written to those paths, potentially overwriting important files or creating new ones in sensitive locations.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to validate the paths of the files within the tar archive before extraction. This can be done by iterating over the files in the archive using the `getnames()` or `getmembers()` methods and checking if any of the paths are absolute or contain \"..\", which would indicate a relative path that goes up in the directory structure.\n\n## Source Code Fix Recommendation\n\nHere is an example of how to validate the paths of the files within a tar archive before extraction:\n\n```python\nimport tarfile\nimport os\n\nwith tarfile.open('archive.tar') as tar:\n    for member in tar.getmembers():\n        if member.name.startswith('/') or '..' in member.name:\n            raise ValueError(f\"Suspicious path in tar archive: {member.name}\")\n    tar.extractall(split_dir)\n```\n\nIn this code, we first open the tar archive. Then, for each file in the archive, we check if the path starts with a \"/\" (indicating an absolute path) or contains \"..\" (indicating a relative path that goes up in the directory structure). If any suspicious paths are found, we raise an exception and stop the extraction. Otherwise, we proceed with the extraction.\n\n## Library Dependencies\n\nThe code example requires the following Python standard library:\n\n- `tarfile`\n- `os`\n\n## References\n\n- [OWASP Python Security - Unvalidated tarfile.extractall usage](https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html#python)\n- [CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')](https://cwe.mitre.org/data/definitions/22.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B202"
+                ]
+              }
+            }
+          ],
+          "language": "en-US",
+          "contents": [
+            "localizedData",
+            "nonLocalizedData"
+          ],
+          "isComprehensive": false
+        }
+      },
+      "language": "en-US",
+      "results": [
+        {
+          "ruleId": "glog-7372debe-3f45-4e4e-b7f9-7d4fb9312733",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "\"Shell=True Subprocess Call Security Vulnerability Detected\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deep_speech_2/preprocess.py"
+                },
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 5,
+                  "endLine": 45,
+                  "endColumn": 92,
+                  "snippet": {
+                    "text": "    subprocess.call([\"sox {}  -r {} -b 16 -c 1 {}\".format(full_recording_path, str(args.sample_rate),\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 44,
+                  "endLine": 47,
+                  "snippet": {
+                    "text": "    subprocess.call([\"sox {}  -r {} -b 16 -c 1 {}\".format(full_recording_path, str(args.sample_rate),\n                                                          wav_recording_path)], shell=True)\n    # process transcript\n    txt_transcript_path = os.path.join(txt_dir, base_filename.replace(\".flac\", \".txt\"))\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "HIGH",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-02c7fbd0-9361-4c1a-af41-1ff72e84f619",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Untrusted Data Deserialization Vulnerability in Pickle Modules"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "alpha_zero_othello/Coach_ddp.py"
+                },
+                "region": {
+                  "startLine": 158,
+                  "startColumn": 45,
+                  "endLine": 158,
+                  "endColumn": 57,
+                  "snippet": {
+                    "text": "                self.trainExamplesHistory = Unpickler(f).load()\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 157,
+                  "endLine": 159,
+                  "snippet": {
+                    "text": "            with open(examplesFile, \"rb\") as f:\n                self.trainExamplesHistory = Unpickler(f).load()\n            log.info('Loading done!')\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-65ce8190-f11a-4229-82df-2591b5c2f3e5",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Untrusted Data Deserialization Vulnerability in Pickle Modules"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "alpha_zero_othello/Coach.py"
+                },
+                "region": {
+                  "startLine": 153,
+                  "startColumn": 45,
+                  "endLine": 153,
+                  "endColumn": 57,
+                  "snippet": {
+                    "text": "                self.trainExamplesHistory = Unpickler(f).load()\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 152,
+                  "endLine": 154,
+                  "snippet": {
+                    "text": "            with open(examplesFile, \"rb\") as f:\n                self.trainExamplesHistory = Unpickler(f).load()\n            log.info('Loading done!')\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-3aa1ef5e-1662-488e-9d03-233a2966dd11",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Unvalidated tarfile.extractall usage vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "deep_speech_2/preprocess.py"
+                },
+                "region": {
+                  "startLine": 81,
+                  "startColumn": 13,
+                  "endLine": 81,
+                  "endColumn": 38,
+                  "snippet": {
+                    "text": "            tar.extractall(split_dir)\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 80,
+                  "endLine": 82,
+                  "snippet": {
+                    "text": "            tar = tarfile.open(target_filename)\n            tar.extractall(split_dir)\n            tar.close()\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "HIGH",
+            "issue_confidence": "HIGH"
+          }
+        }
+      ],
+      "newlineSequences": [
+        "\r\n",
+        "\n"
+      ]
+    }
+  ]
+}
