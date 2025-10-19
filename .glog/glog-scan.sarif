@@ -12,7 +12,7 @@
           "informationUri": "https://www.glog.ai",
           "rules": [
             {
-              "id": "f07e664c-6dee-30f9-8612-4ef74446432a",
+              "id": "38c574f4-d740-3c9d-83b0-18cf6eda9002",
               "name": "python.lang.security.deserialization.pickle.avoid-pickle",
               "shortDescription": {
                 "text": "Opengrep Finding: python.lang.security.deserialization.pickle.avoid-pickle"
@@ -62,7 +62,7 @@
               }
             },
             {
-              "id": "38c574f4-d740-3c9d-83b0-18cf6eda9002",
+              "id": "f07e664c-6dee-30f9-8612-4ef74446432a",
               "name": "python.lang.security.deserialization.pickle.avoid-pickle",
               "shortDescription": {
                 "text": "Opengrep Finding: python.lang.security.deserialization.pickle.avoid-pickle"
@@ -112,7 +112,7 @@
               }
             },
             {
-              "id": "2d016286-ef90-324e-a77b-048b4b544f65",
+              "id": "cbf30816-7687-3e07-8fae-9373ea03363c",
               "name": "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
               "shortDescription": {
                 "text": "Opengrep Finding: trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
@@ -137,7 +137,7 @@
               }
             },
             {
-              "id": "cbf30816-7687-3e07-8fae-9373ea03363c",
+              "id": "2d016286-ef90-324e-a77b-048b4b544f65",
               "name": "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
               "shortDescription": {
                 "text": "Opengrep Finding: trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
@@ -208,6 +208,30 @@
                 "precision": "very-high",
                 "tags": [
                   "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
+                ]
+              }
+            },
+            {
+              "id": "e4da4022-1efb-3585-ab69-df7c1c4b8537",
+              "name": "resources.rules.return-not-in-function",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.return-not-in-function"
+              },
+              "fullDescription": {
+                "text": "`return` only makes sense inside a function"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "`return` only makes sense inside a function\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "`return` only makes sense inside a function\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.return-not-in-function"
                 ]
               }
             },
@@ -284,31 +308,7 @@
               }
             },
             {
-              "id": "e4da4022-1efb-3585-ab69-df7c1c4b8537",
-              "name": "resources.rules.return-not-in-function",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.return-not-in-function"
-              },
-              "fullDescription": {
-                "text": "`return` only makes sense inside a function"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "`return` only makes sense inside a function\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "`return` only makes sense inside a function\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.return-not-in-function"
-                ]
-              }
-            },
-            {
-              "id": "eb686e0b-4335-3ffa-af45-72ab94936f93",
+              "id": "97318dd2-fdc5-3a78-820f-ddae3ee407cc",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -332,7 +332,31 @@
               }
             },
             {
-              "id": "97318dd2-fdc5-3a78-820f-ddae3ee407cc",
+              "id": "2bda93d9-4670-39a4-9636-d194a126c944",
+              "name": "resources.rules.prefer-copy-over-add",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.prefer-copy-over-add"
+              },
+              "fullDescription": {
+                "text": "The ADD command will accept and include files from a URL.\nThis potentially exposes the container to a man-in-the-middle attack.\nSince ADD can have this and other unexpected side effects, the use of\nthe more explicit COPY command is preferred.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "note"
+              },
+              "help": {
+                "text": "The ADD command will accept and include files from a URL.\nThis potentially exposes the container to a man-in-the-middle attack.\nSince ADD can have this and other unexpected side effects, the use of\nthe more explicit COPY command is preferred.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "The ADD command will accept and include files from a URL.\nThis potentially exposes the container to a man-in-the-middle attack.\nSince ADD can have this and other unexpected side effects, the use of\nthe more explicit COPY command is preferred.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://snyk.io/blog/10-docker-image-security-best-practices/](https://snyk.io/blog/10-docker-image-security-best-practices/)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.prefer-copy-over-add"
+                ]
+              }
+            },
+            {
+              "id": "eb686e0b-4335-3ffa-af45-72ab94936f93",
               "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
@@ -380,30 +404,6 @@
               }
             },
             {
-              "id": "2bda93d9-4670-39a4-9636-d194a126c944",
-              "name": "resources.rules.prefer-copy-over-add",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.prefer-copy-over-add"
-              },
-              "fullDescription": {
-                "text": "The ADD command will accept and include files from a URL.\nThis potentially exposes the container to a man-in-the-middle attack.\nSince ADD can have this and other unexpected side effects, the use of\nthe more explicit COPY command is preferred.\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "note"
-              },
-              "help": {
-                "text": "The ADD command will accept and include files from a URL.\nThis potentially exposes the container to a man-in-the-middle attack.\nSince ADD can have this and other unexpected side effects, the use of\nthe more explicit COPY command is preferred.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "The ADD command will accept and include files from a URL.\nThis potentially exposes the container to a man-in-the-middle attack.\nSince ADD can have this and other unexpected side effects, the use of\nthe more explicit COPY command is preferred.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://snyk.io/blog/10-docker-image-security-best-practices/](https://snyk.io/blog/10-docker-image-security-best-practices/)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.prefer-copy-over-add"
-                ]
-              }
-            },
-            {
               "id": "f8d77a48-93cc-356c-850a-7ab569ba1e71",
               "name": "resources.rules.open-never-closed",
               "shortDescription": {
@@ -428,7 +428,7 @@
               }
             },
             {
-              "id": "863c7dd1-b4b8-32b3-a7cf-b657c7d5f96b",
+              "id": "eff37f9a-34b1-3732-8b62-b93395348b46",
               "name": "trailofbits.python.automatic-memory-pinning.automatic-memory-pinning",
               "shortDescription": {
                 "text": "Opengrep Finding: trailofbits.python.automatic-memory-pinning.automatic-memory-pinning"
@@ -453,7 +453,7 @@
               }
             },
             {
-              "id": "eff37f9a-34b1-3732-8b62-b93395348b46",
+              "id": "863c7dd1-b4b8-32b3-a7cf-b657c7d5f96b",
               "name": "trailofbits.python.automatic-memory-pinning.automatic-memory-pinning",
               "shortDescription": {
                 "text": "Opengrep Finding: trailofbits.python.automatic-memory-pinning.automatic-memory-pinning"
@@ -503,30 +503,6 @@
               }
             },
             {
-              "id": "c5c0c0ea-66a5-37f1-8ba7-fdb59ab7d6b1",
-              "name": "resources.rules.return-not-in-function",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.return-not-in-function"
-              },
-              "fullDescription": {
-                "text": "`return` only makes sense inside a function"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "`return` only makes sense inside a function\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "`return` only makes sense inside a function\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.return-not-in-function"
-                ]
-              }
-            },
-            {
               "id": "33a81805-a64d-3c77-be8c-a5c8e37c92b8",
               "name": "trailofbits.python.automatic-memory-pinning.automatic-memory-pinning",
               "shortDescription": {
@@ -548,6 +524,55 @@
                 "precision": "very-high",
                 "tags": [
                   "trailofbits.python.automatic-memory-pinning.automatic-memory-pinning"
+                ]
+              }
+            },
+            {
+              "id": "0aa3d63d-db3a-3b62-b48c-5fdde7048ba3",
+              "name": "trailofbits.python.automatic-memory-pinning.automatic-memory-pinning",
+              "shortDescription": {
+                "text": "Opengrep Finding: trailofbits.python.automatic-memory-pinning.automatic-memory-pinning"
+              },
+              "fullDescription": {
+                "text": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "helpUri": "https://semgrep.dev/r/trailofbits.python.automatic-memory-pinning.automatic-memory-pinning",
+              "help": {
+                "text": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/trailofbits.python.automatic-memory-pinning.automatic-memory-pinning)\n - [https://pytorch.org/docs/stable/data.html#memory-pinning](https://pytorch.org/docs/stable/data.html#memory-pinning)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "trailofbits.python.automatic-memory-pinning.automatic-memory-pinning"
+                ]
+              }
+            },
+            {
+              "id": "c5c0c0ea-66a5-37f1-8ba7-fdb59ab7d6b1",
+              "name": "resources.rules.return-not-in-function",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.return-not-in-function"
+              },
+              "fullDescription": {
+                "text": "`return` only makes sense inside a function"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "`return` only makes sense inside a function\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "`return` only makes sense inside a function\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.return-not-in-function"
                 ]
               }
             },
@@ -576,7 +601,7 @@
               }
             },
             {
-              "id": "0aa3d63d-db3a-3b62-b48c-5fdde7048ba3",
+              "id": "1ef135c1-2ba0-33ce-9bc9-78e2781e71a0",
               "name": "trailofbits.python.automatic-memory-pinning.automatic-memory-pinning",
               "shortDescription": {
                 "text": "Opengrep Finding: trailofbits.python.automatic-memory-pinning.automatic-memory-pinning"
@@ -626,31 +651,6 @@
               }
             },
             {
-              "id": "e8b8075f-172b-312e-86dd-cb234c593977",
-              "name": "trailofbits.python.automatic-memory-pinning.automatic-memory-pinning",
-              "shortDescription": {
-                "text": "Opengrep Finding: trailofbits.python.automatic-memory-pinning.automatic-memory-pinning"
-              },
-              "fullDescription": {
-                "text": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "helpUri": "https://semgrep.dev/r/trailofbits.python.automatic-memory-pinning.automatic-memory-pinning",
-              "help": {
-                "text": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/trailofbits.python.automatic-memory-pinning.automatic-memory-pinning)\n - [https://pytorch.org/docs/stable/data.html#memory-pinning](https://pytorch.org/docs/stable/data.html#memory-pinning)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "trailofbits.python.automatic-memory-pinning.automatic-memory-pinning"
-                ]
-              }
-            },
-            {
               "id": "92a86201-16e8-348e-add7-12651912e7d5",
               "name": "trailofbits.python.automatic-memory-pinning.automatic-memory-pinning",
               "shortDescription": {
@@ -676,32 +676,7 @@
               }
             },
             {
-              "id": "1ef135c1-2ba0-33ce-9bc9-78e2781e71a0",
-              "name": "trailofbits.python.automatic-memory-pinning.automatic-memory-pinning",
-              "shortDescription": {
-                "text": "Opengrep Finding: trailofbits.python.automatic-memory-pinning.automatic-memory-pinning"
-              },
-              "fullDescription": {
-                "text": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "helpUri": "https://semgrep.dev/r/trailofbits.python.automatic-memory-pinning.automatic-memory-pinning",
-              "help": {
-                "text": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/trailofbits.python.automatic-memory-pinning.automatic-memory-pinning)\n - [https://pytorch.org/docs/stable/data.html#memory-pinning](https://pytorch.org/docs/stable/data.html#memory-pinning)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "trailofbits.python.automatic-memory-pinning.automatic-memory-pinning"
-                ]
-              }
-            },
-            {
-              "id": "a4e2c31c-d5b2-34fc-962a-eee8d417630e",
+              "id": "e8b8075f-172b-312e-86dd-cb234c593977",
               "name": "trailofbits.python.automatic-memory-pinning.automatic-memory-pinning",
               "shortDescription": {
                 "text": "Opengrep Finding: trailofbits.python.automatic-memory-pinning.automatic-memory-pinning"
@@ -798,26 +773,27 @@
               }
             },
             {
-              "id": "19ecf606-a8b6-3c6e-9315-12bf72365644",
-              "name": "resources.rules.return-in-init",
+              "id": "a4e2c31c-d5b2-34fc-962a-eee8d417630e",
+              "name": "trailofbits.python.automatic-memory-pinning.automatic-memory-pinning",
               "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.return-in-init"
+                "text": "Opengrep Finding: trailofbits.python.automatic-memory-pinning.automatic-memory-pinning"
               },
               "fullDescription": {
-                "text": "`return` should never appear inside a class __init__ function. This will cause a runtime error."
+                "text": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency"
               },
               "defaultConfiguration": {
                 "enabled": true,
-                "level": "error"
+                "level": "warning"
               },
+              "helpUri": "https://semgrep.dev/r/trailofbits.python.automatic-memory-pinning.automatic-memory-pinning",
               "help": {
-                "text": "`return` should never appear inside a class __init__ function. This will cause a runtime error.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "`return` should never appear inside a class __init__ function. This will cause a runtime error.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+                "text": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/trailofbits.python.automatic-memory-pinning.automatic-memory-pinning)\n - [https://pytorch.org/docs/stable/data.html#memory-pinning](https://pytorch.org/docs/stable/data.html#memory-pinning)\n"
               },
               "properties": {
                 "precision": "very-high",
                 "tags": [
-                  "resources.rules.return-in-init"
+                  "trailofbits.python.automatic-memory-pinning.automatic-memory-pinning"
                 ]
               }
             },
@@ -843,6 +819,30 @@
                 "precision": "very-high",
                 "tags": [
                   "trailofbits.python.numpy-in-pytorch-modules.numpy-in-pytorch-modules"
+                ]
+              }
+            },
+            {
+              "id": "19ecf606-a8b6-3c6e-9315-12bf72365644",
+              "name": "resources.rules.return-in-init",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.return-in-init"
+              },
+              "fullDescription": {
+                "text": "`return` should never appear inside a class __init__ function. This will cause a runtime error."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "`return` should never appear inside a class __init__ function. This will cause a runtime error.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "`return` should never appear inside a class __init__ function. This will cause a runtime error.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.return-in-init"
                 ]
               }
             },
@@ -897,56 +897,6 @@
               }
             },
             {
-              "id": "cfe831a7-eddc-3ed9-9819-452681bed473",
-              "name": "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
-              "shortDescription": {
-                "text": "Opengrep Finding: trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
-              },
-              "fullDescription": {
-                "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "helpUri": "https://semgrep.dev/r/trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
-              "help": {
-                "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/trailofbits.python.pickles-in-pytorch.pickles-in-pytorch)\n - [https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/](https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
-                ]
-              }
-            },
-            {
-              "id": "9f1dfd43-0995-3a03-98ff-ccde3dd55d80",
-              "name": "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
-              "shortDescription": {
-                "text": "Opengrep Finding: trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
-              },
-              "fullDescription": {
-                "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "helpUri": "https://semgrep.dev/r/trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
-              "help": {
-                "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/trailofbits.python.pickles-in-pytorch.pickles-in-pytorch)\n - [https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/](https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
-                ]
-              }
-            },
-            {
               "id": "29fb4f8e-7a3c-3198-b1cb-3efd366c3d5f",
               "name": "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
               "shortDescription": {
@@ -972,7 +922,57 @@
               }
             },
             {
+              "id": "cfe831a7-eddc-3ed9-9819-452681bed473",
+              "name": "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
+              "shortDescription": {
+                "text": "Opengrep Finding: trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
+              },
+              "fullDescription": {
+                "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "helpUri": "https://semgrep.dev/r/trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
+              "help": {
+                "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/trailofbits.python.pickles-in-pytorch.pickles-in-pytorch)\n - [https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/](https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
+                ]
+              }
+            },
+            {
               "id": "deb50ef7-8b48-377e-b697-222d8f600502",
+              "name": "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
+              "shortDescription": {
+                "text": "Opengrep Finding: trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
+              },
+              "fullDescription": {
+                "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "helpUri": "https://semgrep.dev/r/trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
+              "help": {
+                "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/trailofbits.python.pickles-in-pytorch.pickles-in-pytorch)\n - [https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/](https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
+                ]
+              }
+            },
+            {
+              "id": "9f1dfd43-0995-3a03-98ff-ccde3dd55d80",
               "name": "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
               "shortDescription": {
                 "text": "Opengrep Finding: trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
@@ -1046,7 +1046,7 @@
               }
             },
             {
-              "id": "9ff08890-9b07-3dad-b41b-1689417f2af4",
+              "id": "ea3246c2-9f1e-3802-b21c-5ba3958dca57",
               "name": "trailofbits.python.numpy-in-pytorch-modules.numpy-in-pytorch-modules",
               "shortDescription": {
                 "text": "Opengrep Finding: trailofbits.python.numpy-in-pytorch-modules.numpy-in-pytorch-modules"
@@ -1071,7 +1071,7 @@
               }
             },
             {
-              "id": "ea3246c2-9f1e-3802-b21c-5ba3958dca57",
+              "id": "9ff08890-9b07-3dad-b41b-1689417f2af4",
               "name": "trailofbits.python.numpy-in-pytorch-modules.numpy-in-pytorch-modules",
               "shortDescription": {
                 "text": "Opengrep Finding: trailofbits.python.numpy-in-pytorch-modules.numpy-in-pytorch-modules"
@@ -1182,7 +1182,7 @@
       "language": "en-US",
       "results": [
         {
-          "ruleId": "f07e664c-6dee-30f9-8612-4ef74446432a",
+          "ruleId": "38c574f4-d740-3c9d-83b0-18cf6eda9002",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -1192,13 +1192,13 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "alpha_zero_othello/Coach_ddp.py",
+                  "uri": "alpha_zero_othello/Coach.py",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 144,
+                  "startLine": 139,
                   "startColumn": 13,
-                  "endLine": 144,
+                  "endLine": 139,
                   "endColumn": 23,
                   "snippet": {
                     "text": "            Pickler(f).dump(self.trainExamplesHistory)"
@@ -1208,7 +1208,7 @@
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "195e9013465a1f882d161a5aac486ee60f8385ec9288da3aab6ea502eede975fadedd00311cb263ac8f654d2072381fdb452da466f8868478340235507c49bb8_0"
+            "matchBasedId/v1": "aada04d69576f90f2f0214fca2ffdc0d05aa49fef7c233933e60632075b52a284f904bb5b2efb43f9858fb6cbab9f953225aec675666de1778b17e8a6828ee61_0"
           },
           "properties": {}
         },
@@ -1244,7 +1244,7 @@
           "properties": {}
         },
         {
-          "ruleId": "38c574f4-d740-3c9d-83b0-18cf6eda9002",
+          "ruleId": "f07e664c-6dee-30f9-8612-4ef74446432a",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -1254,13 +1254,13 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "alpha_zero_othello/Coach.py",
+                  "uri": "alpha_zero_othello/Coach_ddp.py",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 139,
+                  "startLine": 144,
                   "startColumn": 13,
-                  "endLine": 139,
+                  "endLine": 144,
                   "endColumn": 23,
                   "snippet": {
                     "text": "            Pickler(f).dump(self.trainExamplesHistory)"
@@ -1270,7 +1270,7 @@
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "aada04d69576f90f2f0214fca2ffdc0d05aa49fef7c233933e60632075b52a284f904bb5b2efb43f9858fb6cbab9f953225aec675666de1778b17e8a6828ee61_0"
+            "matchBasedId/v1": "195e9013465a1f882d161a5aac486ee60f8385ec9288da3aab6ea502eede975fadedd00311cb263ac8f654d2072381fdb452da466f8868478340235507c49bb8_0"
           },
           "properties": {}
         },
@@ -1306,37 +1306,6 @@
           "properties": {}
         },
         {
-          "ruleId": "2d016286-ef90-324e-a77b-048b4b544f65",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "alpha_zero_othello/othello/pytorch/NNet.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 119,
-                  "startColumn": 22,
-                  "endLine": 119,
-                  "endColumn": 69,
-                  "snippet": {
-                    "text": "        checkpoint = torch.load(filepath, map_location=map_location)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "2d2ff77b12ff150f7dcda525b08c3390e3de57030b64af05a2f8d23e920b2927e61d0bf991c029e8548f41a8a559d7da139d1b9a401562bc4b6aa5d187e548f9_1"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "cbf30816-7687-3e07-8fae-9373ea03363c",
           "kind": "fail",
           "level": "warning",
@@ -1364,6 +1333,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "02da959cf889a52e459f72c2a1f313350c7fea898fd07af2ba829f31c52cd46f0e9ca456637c3f8289a673bf24d6556a273f1c2e2fcdb76a68ce9c1886a54497_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "2d016286-ef90-324e-a77b-048b4b544f65",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "alpha_zero_othello/othello/pytorch/NNet.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 119,
+                  "startColumn": 22,
+                  "endLine": 119,
+                  "endColumn": 69,
+                  "snippet": {
+                    "text": "        checkpoint = torch.load(filepath, map_location=map_location)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "2d2ff77b12ff150f7dcda525b08c3390e3de57030b64af05a2f8d23e920b2927e61d0bf991c029e8548f41a8a559d7da139d1b9a401562bc4b6aa5d187e548f9_1"
           },
           "properties": {}
         },
@@ -1426,6 +1426,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "2d2ff77b12ff150f7dcda525b08c3390e3de57030b64af05a2f8d23e920b2927e61d0bf991c029e8548f41a8a559d7da139d1b9a401562bc4b6aa5d187e548f9_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "e4da4022-1efb-3585-ab69-df7c1c4b8537",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "`return` only makes sense inside a function"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "alpha_zero_othello/pit.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 48,
+                  "startColumn": 21,
+                  "endLine": 48,
+                  "endColumn": 62,
+                  "snippet": {
+                    "text": "    n2p = lambda x: np.argmax(mcts2.getActionProb(x, temp=0))"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "076c11f0f4459ac66446f28fcdcf97cff0033c418a98aa2c570b0092e6cb7f58faa5c606833a0ca11557390c8009d207e5d6dd8ab4a63139132551027213d6b5_1"
           },
           "properties": {}
         },
@@ -1523,68 +1554,6 @@
           "properties": {}
         },
         {
-          "ruleId": "e4da4022-1efb-3585-ab69-df7c1c4b8537",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "`return` only makes sense inside a function"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "alpha_zero_othello/pit.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 48,
-                  "startColumn": 21,
-                  "endLine": 48,
-                  "endColumn": 62,
-                  "snippet": {
-                    "text": "    n2p = lambda x: np.argmax(mcts2.getActionProb(x, temp=0))"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "076c11f0f4459ac66446f28fcdcf97cff0033c418a98aa2c570b0092e6cb7f58faa5c606833a0ca11557390c8009d207e5d6dd8ab4a63139132551027213d6b5_1"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "eb686e0b-4335-3ffa-af45-72ab94936f93",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "dlrm/Dockerfile",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 12,
-                  "startColumn": 1,
-                  "endLine": 12,
-                  "endColumn": 22,
-                  "snippet": {
-                    "text": "RUN pip install torch==1.3.1"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "518abf79acfc228e71c378c7b1f8746baf4e38c76032dd9fb35fe985a1d885115c9e928adb527046239ff1f1bd37a0d3a7fae00e93bc554722423af2db5d93a8_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "97318dd2-fdc5-3a78-820f-ddae3ee407cc",
           "kind": "fail",
           "level": "warning",
@@ -1612,37 +1581,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "f6ff4b074d727a7c9892a0793ed553b8a00b44d987e615d9b3198cf918b37cafba6db9ac5ad95f4221e4aa0815ceaa862dd40b2d8155078b6a070e4840ae0fb0_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "013d3177-c8dd-3044-9c78-909b3fd1bbb4",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Found dynamic content used in a system call. This is dangerous if external data can reach this function call because it allows a malicious actor to execute commands. Use the 'subprocess' module instead, which is easier to use without accidentally exposing a command injection vulnerability."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "dlrm/bind.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 9,
-                  "endLine": 7,
-                  "endColumn": 66,
-                  "snippet": {
-                    "text": "    r = os.popen(\"taskset -pc {} {}\".format(cpu_id, pid).strip())"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "b03af27cd00ede524950cd0af712b52ab357c4260234ae674a4472eb48b1dc1d8ca8ab51e3cb81df28bc777a474498ea08aa7a5128d93065b9df3f465d54603b_0"
           },
           "properties": {}
         },
@@ -1678,6 +1616,68 @@
           "properties": {}
         },
         {
+          "ruleId": "eb686e0b-4335-3ffa-af45-72ab94936f93",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dlrm/Dockerfile",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 1,
+                  "endLine": 12,
+                  "endColumn": 22,
+                  "snippet": {
+                    "text": "RUN pip install torch==1.3.1"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "518abf79acfc228e71c378c7b1f8746baf4e38c76032dd9fb35fe985a1d885115c9e928adb527046239ff1f1bd37a0d3a7fae00e93bc554722423af2db5d93a8_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "013d3177-c8dd-3044-9c78-909b3fd1bbb4",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Found dynamic content used in a system call. This is dangerous if external data can reach this function call because it allows a malicious actor to execute commands. Use the 'subprocess' module instead, which is easier to use without accidentally exposing a command injection vulnerability."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dlrm/bind.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 9,
+                  "endLine": 7,
+                  "endColumn": 66,
+                  "snippet": {
+                    "text": "    r = os.popen(\"taskset -pc {} {}\".format(cpu_id, pid).strip())"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "b03af27cd00ede524950cd0af712b52ab357c4260234ae674a4472eb48b1dc1d8ca8ab51e3cb81df28bc777a474498ea08aa7a5128d93065b9df3f465d54603b_0"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "f8d77a48-93cc-356c-850a-7ab569ba1e71",
           "kind": "fail",
           "level": "warning",
@@ -1705,37 +1705,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "d5d36ef2a56f056d086ee5c60a63ad5c00ea2d6db0a0d1ff2ce7181c2daa24cba7ac193f4ffc602737014f461039e3b79b79f5d15f8ecf3c173e65c2ac55481e_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "863c7dd1-b4b8-32b3-a7cf-b657c7d5f96b",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "dlrm/data_loader_terabyte.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 322,
-                  "startColumn": 21,
-                  "endLine": 330,
-                  "endColumn": 6,
-                  "snippet": {
-                    "text": "    binary_loader = torch.utils.data.DataLoader(\n        dataset_binary,\n        batch_size=None,\n        shuffle=False,\n        num_workers=0,\n        collate_fn=None,\n        pin_memory=False,\n        drop_last=False,\n    )"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "da041cf3b79c1b2c1c7b52c7815c99fd5107e841db7ed9566b9ce1a4e15e0c32cfb70477c2e5332bd204c1d3abef12f20b61ea6a9e4db31f347d774a84d436ac_0"
           },
           "properties": {}
         },
@@ -1771,6 +1740,37 @@
           "properties": {}
         },
         {
+          "ruleId": "863c7dd1-b4b8-32b3-a7cf-b657c7d5f96b",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dlrm/data_loader_terabyte.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 322,
+                  "startColumn": 21,
+                  "endLine": 330,
+                  "endColumn": 6,
+                  "snippet": {
+                    "text": "    binary_loader = torch.utils.data.DataLoader(\n        dataset_binary,\n        batch_size=None,\n        shuffle=False,\n        num_workers=0,\n        collate_fn=None,\n        pin_memory=False,\n        drop_last=False,\n    )"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "da041cf3b79c1b2c1c7b52c7815c99fd5107e841db7ed9566b9ce1a4e15e0c32cfb70477c2e5332bd204c1d3abef12f20b61ea6a9e4db31f347d774a84d436ac_0"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "758736dc-ee32-3cd3-8ddb-94e5ae54c5fa",
           "kind": "fail",
           "level": "warning",
@@ -1798,37 +1798,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "39f446d831b22598ea79ba70689f11bb78488e5057f9917ab9103d89e9433a935bc8c0bbc6fdc82c64595682b4c0df5fc21a72988d66fe2ee5ebf9baa25cbd7d_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "c5c0c0ea-66a5-37f1-8ba7-fdb59ab7d6b1",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "`return` only makes sense inside a function"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "dlrm/dlrm_data_caffe2.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 822,
-                  "startColumn": 31,
-                  "endLine": 822,
-                  "endColumn": 54,
-                  "snippet": {
-                    "text": "        map(lambda tuple_x_k: tuple_x_k[1] / float(l), dc)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "c03b4310845c40b0529cb18aed52ac74afbc70590ab59dcdd71f5fa9379c75ca1f05972a48ca65181b0b0e7b36dd1ac801e2c16ecfb40ca0ab279c4bb864562c_1"
           },
           "properties": {}
         },
@@ -1864,37 +1833,6 @@
           "properties": {}
         },
         {
-          "ruleId": "674df4b6-de59-3553-9230-a3ef5c97a423",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "`return` only makes sense inside a function"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "dlrm/dlrm_data_caffe2.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 820,
-                  "startColumn": 42,
-                  "endLine": 820,
-                  "endColumn": 54,
-                  "snippet": {
-                    "text": "    list_sd = list(map(lambda tuple_x_k: tuple_x_k[0], dc))  # x = tuple_x_k[0]"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "c03b4310845c40b0529cb18aed52ac74afbc70590ab59dcdd71f5fa9379c75ca1f05972a48ca65181b0b0e7b36dd1ac801e2c16ecfb40ca0ab279c4bb864562c_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "0aa3d63d-db3a-3b62-b48c-5fdde7048ba3",
           "kind": "fail",
           "level": "warning",
@@ -1926,95 +1864,64 @@
           "properties": {}
         },
         {
-          "ruleId": "5f79a695-42c1-3737-9566-16f8fd574e1e",
+          "ruleId": "c5c0c0ea-66a5-37f1-8ba7-fdb59ab7d6b1",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency"
+            "text": "`return` only makes sense inside a function"
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "dlrm/dlrm_data_pytorch.py",
+                  "uri": "dlrm/dlrm_data_caffe2.py",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 469,
-                  "startColumn": 27,
-                  "endLine": 478,
-                  "endColumn": 14,
+                  "startLine": 822,
+                  "startColumn": 31,
+                  "endLine": 822,
+                  "endColumn": 54,
                   "snippet": {
-                    "text": "            test_loader = torch.utils.data.DataLoader(\n                test_data,\n                batch_size=None,\n                batch_sampler=None,\n                shuffle=False,\n                num_workers=0,\n                collate_fn=None,\n                pin_memory=False,\n                drop_last=False,\n            )"
+                    "text": "        map(lambda tuple_x_k: tuple_x_k[1] / float(l), dc)"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "52bc53dd4f9fafaf1931f1a36f8d36c2947daf060812bf89b7726c3cbd42d332d7d97d2d6e42854dafd9b9cbb82aab44e0cec3bf217de96fc6913abd8dac3e8d_1"
+            "matchBasedId/v1": "c03b4310845c40b0529cb18aed52ac74afbc70590ab59dcdd71f5fa9379c75ca1f05972a48ca65181b0b0e7b36dd1ac801e2c16ecfb40ca0ab279c4bb864562c_1"
           },
           "properties": {}
         },
         {
-          "ruleId": "e8b8075f-172b-312e-86dd-cb234c593977",
+          "ruleId": "674df4b6-de59-3553-9230-a3ef5c97a423",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency"
+            "text": "`return` only makes sense inside a function"
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "dlrm/dlrm_data_pytorch.py",
+                  "uri": "dlrm/dlrm_data_caffe2.py",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 562,
-                  "startColumn": 23,
-                  "endLine": 570,
-                  "endColumn": 10,
+                  "startLine": 820,
+                  "startColumn": 42,
+                  "endLine": 820,
+                  "endColumn": 54,
                   "snippet": {
-                    "text": "        test_loader = torch.utils.data.DataLoader(\n            test_data,\n            batch_size=args.test_mini_batch_size,\n            shuffle=False,\n            num_workers=args.test_num_workers,\n            collate_fn=collate_wrapper_criteo,\n            pin_memory=False,\n            drop_last=False,  # True\n        )"
+                    "text": "    list_sd = list(map(lambda tuple_x_k: tuple_x_k[0], dc))  # x = tuple_x_k[0]"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "52bc53dd4f9fafaf1931f1a36f8d36c2947daf060812bf89b7726c3cbd42d332d7d97d2d6e42854dafd9b9cbb82aab44e0cec3bf217de96fc6913abd8dac3e8d_3"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "92a86201-16e8-348e-add7-12651912e7d5",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "dlrm/dlrm_data_pytorch.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 759,
-                  "startColumn": 20,
-                  "endLine": 767,
-                  "endColumn": 6,
-                  "snippet": {
-                    "text": "    train_loader = torch.utils.data.DataLoader(\n        train_data,\n        batch_size=1,\n        shuffle=False,\n        num_workers=args.num_workers,\n        collate_fn=collate_wrapper_random,\n        pin_memory=False,\n        drop_last=False,  # True\n    )"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "52bc53dd4f9fafaf1931f1a36f8d36c2947daf060812bf89b7726c3cbd42d332d7d97d2d6e42854dafd9b9cbb82aab44e0cec3bf217de96fc6913abd8dac3e8d_4"
+            "matchBasedId/v1": "c03b4310845c40b0529cb18aed52ac74afbc70590ab59dcdd71f5fa9379c75ca1f05972a48ca65181b0b0e7b36dd1ac801e2c16ecfb40ca0ab279c4bb864562c_0"
           },
           "properties": {}
         },
@@ -2050,7 +1957,7 @@
           "properties": {}
         },
         {
-          "ruleId": "a4e2c31c-d5b2-34fc-962a-eee8d417630e",
+          "ruleId": "5f79a695-42c1-3737-9566-16f8fd574e1e",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -2064,19 +1971,81 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 769,
-                  "startColumn": 19,
-                  "endLine": 777,
-                  "endColumn": 6,
+                  "startLine": 469,
+                  "startColumn": 27,
+                  "endLine": 478,
+                  "endColumn": 14,
                   "snippet": {
-                    "text": "    test_loader = torch.utils.data.DataLoader(\n        test_data,\n        batch_size=1,\n        shuffle=False,\n        num_workers=args.num_workers,\n        collate_fn=collate_wrapper_random,\n        pin_memory=False,\n        drop_last=False,  # True\n    )"
+                    "text": "            test_loader = torch.utils.data.DataLoader(\n                test_data,\n                batch_size=None,\n                batch_sampler=None,\n                shuffle=False,\n                num_workers=0,\n                collate_fn=None,\n                pin_memory=False,\n                drop_last=False,\n            )"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "52bc53dd4f9fafaf1931f1a36f8d36c2947daf060812bf89b7726c3cbd42d332d7d97d2d6e42854dafd9b9cbb82aab44e0cec3bf217de96fc6913abd8dac3e8d_5"
+            "matchBasedId/v1": "52bc53dd4f9fafaf1931f1a36f8d36c2947daf060812bf89b7726c3cbd42d332d7d97d2d6e42854dafd9b9cbb82aab44e0cec3bf217de96fc6913abd8dac3e8d_1"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "92a86201-16e8-348e-add7-12651912e7d5",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dlrm/dlrm_data_pytorch.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 759,
+                  "startColumn": 20,
+                  "endLine": 767,
+                  "endColumn": 6,
+                  "snippet": {
+                    "text": "    train_loader = torch.utils.data.DataLoader(\n        train_data,\n        batch_size=1,\n        shuffle=False,\n        num_workers=args.num_workers,\n        collate_fn=collate_wrapper_random,\n        pin_memory=False,\n        drop_last=False,  # True\n    )"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "52bc53dd4f9fafaf1931f1a36f8d36c2947daf060812bf89b7726c3cbd42d332d7d97d2d6e42854dafd9b9cbb82aab44e0cec3bf217de96fc6913abd8dac3e8d_4"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "e8b8075f-172b-312e-86dd-cb234c593977",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dlrm/dlrm_data_pytorch.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 562,
+                  "startColumn": 23,
+                  "endLine": 570,
+                  "endColumn": 10,
+                  "snippet": {
+                    "text": "        test_loader = torch.utils.data.DataLoader(\n            test_data,\n            batch_size=args.test_mini_batch_size,\n            shuffle=False,\n            num_workers=args.test_num_workers,\n            collate_fn=collate_wrapper_criteo,\n            pin_memory=False,\n            drop_last=False,  # True\n        )"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "52bc53dd4f9fafaf1931f1a36f8d36c2947daf060812bf89b7726c3cbd42d332d7d97d2d6e42854dafd9b9cbb82aab44e0cec3bf217de96fc6913abd8dac3e8d_3"
           },
           "properties": {}
         },
@@ -2174,33 +2143,33 @@
           "properties": {}
         },
         {
-          "ruleId": "19ecf606-a8b6-3c6e-9315-12bf72365644",
+          "ruleId": "a4e2c31c-d5b2-34fc-962a-eee8d417630e",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "`return` should never appear inside a class __init__ function. This will cause a runtime error."
+            "text": "If possible, it is better to rely on automatic pinning in PyTorch to avoid undefined behavior and for efficiency"
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "dlrm/dlrm_s_caffe2.py",
+                  "uri": "dlrm/dlrm_data_pytorch.py",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 598,
-                  "startColumn": 17,
-                  "endLine": 598,
-                  "endColumn": 58,
+                  "startLine": 769,
+                  "startColumn": 19,
+                  "endLine": 777,
+                  "endColumn": 6,
                   "snippet": {
-                    "text": "                return self.create_parallel_forward_ops()"
+                    "text": "    test_loader = torch.utils.data.DataLoader(\n        test_data,\n        batch_size=1,\n        shuffle=False,\n        num_workers=args.num_workers,\n        collate_fn=collate_wrapper_random,\n        pin_memory=False,\n        drop_last=False,  # True\n    )"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "824f92f1443b6b4ba3a82000a3ffdb363df3aaca8bcc49b4bf80b66820d230c6e787052de2f9ec273ca912c2761842e4979dc17b62584ce812d411ec30eab5d1_1"
+            "matchBasedId/v1": "52bc53dd4f9fafaf1931f1a36f8d36c2947daf060812bf89b7726c3cbd42d332d7d97d2d6e42854dafd9b9cbb82aab44e0cec3bf217de96fc6913abd8dac3e8d_5"
           },
           "properties": {}
         },
@@ -2232,6 +2201,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "edd8966d6cdee8ee7bda89c3ab1dc8fb5e02b6f4d688b58c3968d5fa1c07b24edec0e138f9079b4460d2c510b3b19077f9b4e0c0b38ab9cbd6c5c749ff0590d0_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "19ecf606-a8b6-3c6e-9315-12bf72365644",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "`return` should never appear inside a class __init__ function. This will cause a runtime error."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dlrm/dlrm_s_caffe2.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 598,
+                  "startColumn": 17,
+                  "endLine": 598,
+                  "endColumn": 58,
+                  "snippet": {
+                    "text": "                return self.create_parallel_forward_ops()"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "824f92f1443b6b4ba3a82000a3ffdb363df3aaca8bcc49b4bf80b66820d230c6e787052de2f9ec273ca912c2761842e4979dc17b62584ce812d411ec30eab5d1_1"
           },
           "properties": {}
         },
@@ -2298,68 +2298,6 @@
           "properties": {}
         },
         {
-          "ruleId": "cfe831a7-eddc-3ed9-9819-452681bed473",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "dlrm/dlrm_s_pytorch.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 1387,
-                  "startColumn": 28,
-                  "endLine": 1391,
-                  "endColumn": 18,
-                  "snippet": {
-                    "text": "                ld_model = torch.load(\n                    args.load_model,\n                    map_location=torch.device(\"cuda\")\n                    # map_location=lambda storage, loc: storage.cuda(0)\n                )"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "496d908ebf786a2c4856906837f3f04396b6f6d2941f66954b18d8716e0d6a101055cb5ca7fca12416843a6374ea22d5c7a6625209665977e79fa0f684ea7453_1"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "9f1dfd43-0995-3a03-98ff-ccde3dd55d80",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "dlrm/dlrm_s_pytorch.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 1394,
-                  "startColumn": 24,
-                  "endLine": 1394,
-                  "endColumn": 85,
-                  "snippet": {
-                    "text": "            ld_model = torch.load(args.load_model, map_location=torch.device(\"cpu\"))"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "496d908ebf786a2c4856906837f3f04396b6f6d2941f66954b18d8716e0d6a101055cb5ca7fca12416843a6374ea22d5c7a6625209665977e79fa0f684ea7453_2"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "29fb4f8e-7a3c-3198-b1cb-3efd366c3d5f",
           "kind": "fail",
           "level": "warning",
@@ -2391,6 +2329,37 @@
           "properties": {}
         },
         {
+          "ruleId": "cfe831a7-eddc-3ed9-9819-452681bed473",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dlrm/dlrm_s_pytorch.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 1387,
+                  "startColumn": 28,
+                  "endLine": 1391,
+                  "endColumn": 18,
+                  "snippet": {
+                    "text": "                ld_model = torch.load(\n                    args.load_model,\n                    map_location=torch.device(\"cuda\")\n                    # map_location=lambda storage, loc: storage.cuda(0)\n                )"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "496d908ebf786a2c4856906837f3f04396b6f6d2941f66954b18d8716e0d6a101055cb5ca7fca12416843a6374ea22d5c7a6625209665977e79fa0f684ea7453_1"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "deb50ef7-8b48-377e-b697-222d8f600502",
           "kind": "fail",
           "level": "warning",
@@ -2418,6 +2387,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "496d908ebf786a2c4856906837f3f04396b6f6d2941f66954b18d8716e0d6a101055cb5ca7fca12416843a6374ea22d5c7a6625209665977e79fa0f684ea7453_3"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "9f1dfd43-0995-3a03-98ff-ccde3dd55d80",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dlrm/dlrm_s_pytorch.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 1394,
+                  "startColumn": 24,
+                  "endLine": 1394,
+                  "endColumn": 85,
+                  "snippet": {
+                    "text": "            ld_model = torch.load(args.load_model, map_location=torch.device(\"cpu\"))"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "496d908ebf786a2c4856906837f3f04396b6f6d2941f66954b18d8716e0d6a101055cb5ca7fca12416843a6374ea22d5c7a6625209665977e79fa0f684ea7453_2"
           },
           "properties": {}
         },
@@ -2484,37 +2484,6 @@
           "properties": {}
         },
         {
-          "ruleId": "9ff08890-9b07-3dad-b41b-1689417f2af4",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Usage of NumPy library inside PyTorch `QREmbeddingBag` module was found. Avoid mixing these libraries for efficiency and proper ONNX loading"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "dlrm/tricks/qr_embedding_bag.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 135,
-                  "startColumn": 36,
-                  "endLine": 135,
-                  "endColumn": 76,
-                  "snippet": {
-                    "text": "        self.num_embeddings = [int(np.ceil(num_categories / num_collisions)),"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "696c0b445a3f330f4e18fcda690b82a26c11ce30b5c8c531393f0a49ee22e7afa12f42f3119ede34771d96c1c8ec78b277452d2132b6e9de97eae9eb33fb8194_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "ea3246c2-9f1e-3802-b21c-5ba3958dca57",
           "kind": "fail",
           "level": "warning",
@@ -2542,6 +2511,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "c25b4bf97f03f0ea23c544475cd51ee98a20b70e28f5760e23e46fea6f0fe66561adc5e42df64a02e4f0f493c8555f315b35bf813118271a30067f9f5f3875d3_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "9ff08890-9b07-3dad-b41b-1689417f2af4",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Usage of NumPy library inside PyTorch `QREmbeddingBag` module was found. Avoid mixing these libraries for efficiency and proper ONNX loading"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "dlrm/tricks/qr_embedding_bag.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 135,
+                  "startColumn": 36,
+                  "endLine": 135,
+                  "endColumn": 76,
+                  "snippet": {
+                    "text": "        self.num_embeddings = [int(np.ceil(num_categories / num_collisions)),"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "696c0b445a3f330f4e18fcda690b82a26c11ce30b5c8c531393f0a49ee22e7afa12f42f3119ede34771d96c1c8ec78b277452d2132b6e9de97eae9eb33fb8194_0"
           },
           "properties": {}
         },
